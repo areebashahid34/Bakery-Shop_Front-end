@@ -1,0 +1,341 @@
+/* =========================================================
+   DESIGN SYSTEM (STRICT)
+========================================================= */
+:root {
+
+  --brand-primary-color: #e8b4b8;
+  --brand-secondary-color: #f7d9c4;
+  --brand-third-color: #ffffff;
+  --brand-accent-color: #c97c7c;
+
+  --bg-main: #fff8f6;
+  --bg-card: #ffffff;
+
+  --text-primary-color: #3a2d2d;
+  --text-secondary-color: #5a4a4a;
+
+  --border-primary-color: #f7d9c4;
+
+  --radius-md: 12px;
+  --transition: 0.3s ease;
+}
+
+/* =========================================================
+   BASE
+========================================================= */
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: var(--bg-main);
+  color: var(--text-primary-color);
+}
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+h1, h2, h3, p {
+  text-align: center;
+  color: var(--text-primary-color);
+}
+
+/* =========================================================
+   NAVBAR (FLEX ONLY)
+========================================================= */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: var(--brand-secondary-color);
+  position: sticky;
+  top: 0;
+}
+
+nav > a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--text-primary-color);
+}
+
+/* MENU */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-primary-color);
+}
+
+/* HAMBURGER */
+#menu {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .menu-icon{display:block;}
+
+  nav ul{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    right:0;
+    top:60px;
+    background:white;
+    width:180px;
+    padding:10px;
+  }
+
+  #menu:checked ~ ul{
+    display:flex;
+  }
+}
+
+/* =========================================================
+   CARDS (MAGNOLIA STYLE)
+========================================================= */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  width: 220px;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+.form-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: var(--radius-md);
+}
+/* =========================================================
+   FORM ENHANCEMENT (DO NOT REMOVE OLD CODE)
+========================================================= */
+
+/* Improve spacing + shadow */
+form {
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+/* Inputs styling */
+input, textarea {
+  padding: 10px;
+  border: 1px solid var(--border-primary-color);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: var(--transition);
+}
+
+/* Focus effect */
+input:focus, textarea:focus {
+  border-color: var(--brand-accent-color);
+  box-shadow: 0 0 5px var(--brand-accent-color);
+}
+
+/* Button styling */
+button {
+  padding: 10px;
+  border: none;
+  border-radius: var(--radius-md);
+
+  background: var(--brand-primary-color);
+  color: white;
+
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Button hover */
+button:hover {
+  background: var(--brand-accent-color);
+}
+
+/* Link styling inside form */
+form a {
+  color: var(--brand-accent-color);
+  text-decoration: none;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
+/* =========================================================
+   TABLE
+========================================================= */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th {
+  background: var(--brand-primary-color);
+  padding: 10px;
+}
+
+td {
+  text-align: center;
+  padding: 10px;
+}
+
+tr:nth-child(even){
+  background:#fff3ea;
+}
+
+tr:hover{
+  background: var(--brand-secondary-color);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.footer-box {
+  width: 200px;
+}
+
+.footer-box h3 {
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.footer-box a {
+  text-decoration: none;
+  color: var(--text-primary-color);
+}
+
+.footer-box a:hover {
+  color: var(--brand-accent-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+}
+#toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.toast {
+  background: var(--brand-primary-color);
+  color: white;
+  padding: 12px 18px;
+  margin-top: 10px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  font-family: Georgia, serif;
+  animation: slide 0.3s ease;
+}
+
+@keyframes slide {
+  from { transform: translateX(100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+/* ================= HERO ================= */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 20px;
+    text-align: center;
+
+    background: var(--brand-secondary-color);
+}
+
+.hero h1 {
+    font-size: 45px;
+}
+
+.hero p {
+    max-width: 600px;
+    color: var(--text-secondary-color);
+}
+
+.hero-btn {
+    margin-top: 15px;
+    padding: 12px 22px;
+    background: var(--brand-primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+}
+
+/* ================= TOAST ================= */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    background: var(--brand-accent-color);
+    color: white;
+
+    padding: 12px 18px;
+    border-radius: 10px;
+
+    z-index: 9999;
+}
+
+/* ================= BUTTONS ================= */
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: var(--brand-primary-color);
+    color: white;
+    cursor: pointer;
+}
