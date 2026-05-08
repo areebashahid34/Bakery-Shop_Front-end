@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard - Bakery Bliss</title>
+  <link rel="stylesheet" href="../cssFile/globalStyles.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="../index.html">Bakery Bliss</a>
+
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="signup.html">Signup</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- MAIN -->
+<div class="container">
+
+  <header>
+    <h1>Bakery Stock Dashboard</h1>
+    <p>Inventory management system for stock control and analytics</p>
+  </header>
+
+  <!-- STOCK ACTIONS -->
+  <section class="card-container">
+    <div class="card">
+      <img src="../sources/viewstock.png" alt="view stock icon">
+      <h2>View Stock</h2>
+      <p>View items available in bakery</p>
+      <button id="viewBtn">View</button>
+    </div>
+
+    <div class="card">
+      <img src="../sources/insert.png" alt="Insert stock icon">
+      <h2>Insert Stock</h2>
+      <p>Add new bakery items into system</p>
+      <button id="insertBtn">Insert</button>
+    </div>
+
+    <div class="card">
+      <img src="../sources/updatestock.png" alt="Update stock icon">
+      <h2>Update Stock</h2>
+      <p>Edit product price, quantity and details</p>
+      <button id="updateBtn">Update</button>
+    </div>
+
+    <div class="card">
+      <img src="../sources/delete.png" alt="Delete stock icon">
+      <h2>Delete Stock</h2>
+      <p>Remove unavailable and expired bakery products</p>
+      <button id="deleteBtn">Delete</button>
+    </div>
+
+  </section>
+
+  <!-- STATS -->
+  <section class="card-container">
+
+    <div class="box">
+      <h2>Total Products</h2>
+      <p>128 Items Available</p>
+    </div>
+
+    <div class="card">
+      <h2>Low Stock</h2>
+      <p>6 Items Need Restock</p>
+    </div>
+
+    <div class="card">
+      <h2>Daily Sales</h2>
+      <p>Rs. 45,000 Revenue</p>
+    </div>
+
+    <div class="card">
+      <h2>Active Orders</h2>
+      <p>23 Orders Processing</p>
+    </div>
+
+  </section>
+
+  <!-- ANALYTICS -->
+  <section class="card-container">
+
+    <div class="card">
+      <h2>Stock Analytics</h2>
+
+      <img src="../sources/stockanalysis.png" alt="Bakery stock analytics graph">
+
+      <p>
+        Visual representation of stock levels, product demand,
+        and sales performance across bakery categories.
+      </p>
+
+    </div>
+
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="footer-container">
+
+    <div class="footer-box">
+      <h3>Bakery Bliss</h3>
+      <p>
+        Freshly baked cakes, cupcakes, pastries & desserts made daily with love and premium ingredients.
+      </p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <p><a href="../index.html">Home</a></p>
+      <p><a href="menu.html">Menu</a></p>
+      <p><a href="services.html">Services</a></p>
+      <p><a href="contact.html">Contact</a></p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Contact</h3>
+      <p>📍 Bakery Bliss Store</p>
+      <p>📞 +92 300 0000000</p>
+      <p>📧 info@bakerybliss.com</p>
+    </div>
+
+  </div>
+
+  <p class="footer-bottom">
+    © 2026 Bakery Bliss. All Rights Reserved.
+  </p>
+
+</footer>
+
+<script src="../jsFile/Jsfunction.js"></script>
+
+</body>
+</html>

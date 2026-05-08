@@ -1,3 +1,4 @@
+
 // ================= TOAST SYSTEM =================
 function showToast(message) {
     const toast = document.createElement("div");
@@ -60,7 +61,18 @@ function submitForm() {
     showToast("Message sent 💌");
 }
 
-// ================= ORDER SYSTEM =================
-function orderItem(item) {
-    showToast(item + " added to cart 🛒");
-}
+window.onload = function () {
+
+  document.getElementById("insertBtn").onclick = function () {
+    alert("Insert Stock Clicked");
+  };
+
+  document.getElementById("updateBtn").onclick = function () {
+    alert("Update Stock Clicked");
+  };
+
+  document.getElementById("deleteBtn").onclick = function () {
+    alert("Delete Stock Clicked");
+  };
+
+};
