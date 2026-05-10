@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard - Bakery Bliss</title>
   <link rel="stylesheet" href="../cssFile/globalStyles.css">
 </head>
@@ -10,112 +12,353 @@
 <!-- NAVBAR -->
 <nav>
   <a href="../index.html">Bakery Bliss</a>
-
+  <label for="menu" class="menu-icon">☰</label>
+  <input type="checkbox" id="menu">
   <ul>
     <li><a href="../index.html">Home</a></li>
     <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="menu.html">Menu</a></li>
     <li><a href="login.html">Login</a></li>
     <li><a href="signup.html">Signup</a></li>
-    <li><a href="menu.html">Menu</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
-<!-- MAIN -->
-<div class="container">
+<!-- DASHBOARD HERO BANNER -->
+<section class="dash-hero">
+  <div class="dash-hero-text">
+    <h1>Bakery Bliss Dashboard</h1>
+    <p>Welcome back, Admin! Manage your bakery inventory, track sales, and keep your stock fresh and up to date.</p>
+    <p>Today is a great day to bake something wonderful. 🎀</p>
+  </div>
+  <img src="../sources/birthdaycake.jpg" alt="Bakery Bliss featured cake">
+</section>
 
-  <header>
-    <h1>Bakery Stock Dashboard</h1>
-    <p>Inventory management system for stock control and analytics</p>
-  </header>
+<!-- STATS ROW -->
+<section class="dash-section">
+  <h2>Live Inventory Overview</h2>
+  <p>A quick snapshot of your current bakery stock and daily performance metrics.</p>
 
-  <!-- STOCK ACTIONS -->
-  <section class="card-container">
+  <div class="card-container">
+
     <div class="card">
-      <img src="../sources/viewstock.png" alt="view stock icon">
-      <h2>View Stock</h2>
-      <p>View items available in bakery</p>
-      <button id="viewBtn">View</button>
+      <h2>128</h2>
+      <h3>Total Products</h3>
+      <p>All bakery items currently listed in the system across all categories.</p>
     </div>
 
     <div class="card">
-      <img src="../sources/insert.png" alt="Insert stock icon">
-      <h2>Insert Stock</h2>
-      <p>Add new bakery items into system</p>
-      <button id="insertBtn">Insert</button>
+      <h2>6</h2>
+      <h3>Low Stock Alerts</h3>
+      <p>Items running critically low and need immediate restocking attention.</p>
     </div>
 
     <div class="card">
-      <img src="../sources/updatestock.png" alt="Update stock icon">
+      <h2>Rs. 45,000</h2>
+      <h3>Daily Revenue</h3>
+      <p>Total sales revenue generated today from all bakery product orders.</p>
+    </div>
+
+    <div class="card">
+      <h2>23</h2>
+      <h3>Active Orders</h3>
+      <p>Customer orders currently being prepared and processed in the kitchen.</p>
+    </div>
+
+    <div class="card">
+      <h2>14</h2>
+      <h3>New Customers</h3>
+      <p>New customer accounts registered and placed orders today.</p>
+    </div>
+
+    <div class="card">
+      <h2>98%</h2>
+      <h3>Satisfaction Rate</h3>
+      <p>Customer satisfaction score based on recent reviews and feedback.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- STOCK ACTION CARDS -->
+<section class="dash-section" id="stock-actions">
+  <h2>Stock Management</h2>
+  <p>Use the action cards below to manage your bakery inventory. View, add, update, or remove stock items with ease.</p>
+
+  <div class="card-container">
+
+    <div class="card">
+      <img src="../sources/viewstock.png" alt="View all stock items">
+      <h2>View All Stock</h2>
+      <p>Browse the complete list of all bakery products currently available in your inventory system. Filter by category, price, or availability.</p>
+      <button id="viewBtn">View Stock</button>
+    </div>
+
+    <div class="card">
+      <img src="../sources/insert.png" alt="Insert new stock item">
+      <h2>Insert New Stock</h2>
+      <p>Add brand new bakery products to the inventory. Enter product name, category, price, quantity, and upload a product image.</p>
+      <button id="insertBtn">Insert Stock</button>
+    </div>
+
+    <div class="card">
+      <img src="../sources/updatestock.png" alt="Update existing stock">
       <h2>Update Stock</h2>
-      <p>Edit product price, quantity and details</p>
-      <button id="updateBtn">Update</button>
+      <p>Edit and update existing product details including price adjustments, quantity changes, descriptions, and availability status.</p>
+      <button id="updateBtn">Update Stock</button>
     </div>
 
     <div class="card">
-      <img src="../sources/delete.png" alt="Delete stock icon">
+      <img src="../sources/delete.png" alt="Delete stock item">
       <h2>Delete Stock</h2>
-      <p>Remove unavailable and expired bakery products</p>
-      <button id="deleteBtn">Delete</button>
+      <p>Permanently remove discontinued, expired, or unavailable bakery products from the inventory to keep records clean.</p>
+      <button id="deleteBtn">Delete Stock</button>
     </div>
 
-  </section>
+  </div>
+</section>
 
-  <!-- STATS -->
-  <section class="card-container">
+<!-- STOCK ANALYTICS CHART -->
+<section class="dash-section">
+  <h2>Stock Analytics</h2>
+  <p>Visual breakdown of stock levels across all bakery product categories. Monitor demand trends and restock accordingly.</p>
+
+  <div class="card-container">
+    <div class="card dash-chart-card">
+      <canvas id="stockChart"></canvas>
+      <p>Monthly stock distribution across Cakes, Cupcakes, Pastries, Breads, Donuts, and Beverages.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SALES TREND CHART -->
+<section class="dash-section">
+  <h2>Weekly Sales Trend</h2>
+  <p>Track your daily revenue performance over the past week to identify peak sales days and plan production accordingly.</p>
+
+  <div class="card-container">
+    <div class="card dash-chart-card">
+      <canvas id="salesChart"></canvas>
+      <p>Revenue trend from Monday to Sunday — helping you plan baking schedules and staffing efficiently.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="dash-section">
+  <h2>Featured Bakery Products</h2>
+  <p>Top-selling and most loved items from the Bakery Bliss collection. These products drive the highest daily revenue.</p>
+
+  <div class="card-container">
 
     <div class="card">
-      <h2>Total Products</h2>
-      <p>128 Items Available</p>
+      <img src="../sources/chocolatefudgecake.jpg" alt="Chocolate Fudge Cake">
+      <h3>Chocolate Fudge Cake</h3>
+      <p>Rich dark chocolate layers with smooth fudge frosting. Best seller every weekend.</p>
+      <p>Stock: 18 units &nbsp;|&nbsp; Rs. 2,500</p>
     </div>
 
     <div class="card">
-      <h2>Low Stock</h2>
-      <p>6 Items Need Restock</p>
+      <img src="../sources/redvelvetcake.jpg" alt="Red Velvet Cake">
+      <h3>Red Velvet Cake</h3>
+      <p>Classic red velvet with cream cheese frosting. A customer favourite for celebrations.</p>
+      <p>Stock: 12 units &nbsp;|&nbsp; Rs. 2,800</p>
     </div>
 
     <div class="card">
-      <h2>Daily Sales</h2>
-      <p>Rs. 45,000 Revenue</p>
+      <img src="../sources/cheesecake.jpg" alt="Cheesecake">
+      <h3>New York Cheesecake</h3>
+      <p>Dense and creamy cheesecake on a buttery biscuit base. Perfect for any occasion.</p>
+      <p>Stock: 9 units &nbsp;|&nbsp; Rs. 2,200</p>
     </div>
 
     <div class="card">
-      <h2>Active Orders</h2>
-      <p>23 Orders Processing</p>
+      <img src="../sources/weddingcake.jpg" alt="Wedding Cake">
+      <h3>Wedding Cake</h3>
+      <p>Elegant multi-tier wedding cake with custom floral decorations and premium fondant.</p>
+      <p>Stock: 4 units &nbsp;|&nbsp; Rs. 15,000</p>
     </div>
-
-  </section>
-
-  <!-- ANALYTICS -->
-  <section class="card-container">
 
     <div class="card">
-      <h2>Stock Analytics</h2>
-
-      <img src="../sources/stockanalysis.png" alt="Bakery stock analytics graph">
-
-      <p>
-        Visual representation of stock levels, product demand,
-        and sales performance across bakery categories.
-      </p>
-
+      <img src="../sources/blueberrycupcake.jpg" alt="Blueberry Cupcake">
+      <h3>Blueberry Cupcake</h3>
+      <p>Moist vanilla cupcake topped with fresh blueberry buttercream frosting.</p>
+      <p>Stock: 35 units &nbsp;|&nbsp; Rs. 350</p>
     </div>
 
-  </section>
+    <div class="card">
+      <img src="../sources/buttercrossiant.jpg" alt="Butter Croissant">
+      <h3>Butter Croissant</h3>
+      <p>Golden, flaky, and buttery croissant baked fresh every morning. Pairs great with coffee.</p>
+      <p>Stock: 50 units &nbsp;|&nbsp; Rs. 280</p>
+    </div>
 
-</div>
+    <div class="card">
+      <img src="../sources/applepieslice.jpg" alt="Apple Pie Slice">
+      <h3>Apple Pie Slice</h3>
+      <p>Warm cinnamon apple filling in a golden pastry crust. A timeless bakery classic.</p>
+      <p>Stock: 22 units &nbsp;|&nbsp; Rs. 450</p>
+    </div>
+
+    <div class="card">
+      <img src="../sources/creampuff.jpg" alt="Cream Puff">
+      <h3>Cream Puff</h3>
+      <p>Light choux pastry filled with fresh whipped cream. Delicate and irresistible.</p>
+      <p>Stock: 28 units &nbsp;|&nbsp; Rs. 320</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- RECENT STOCK TABLE -->
+<section class="dash-section">
+  <h2>Recent Stock Entries</h2>
+  <p>Latest products added or updated in the inventory system. Review entries and take action as needed.</p>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Category</th>
+          <th>Price (Rs.)</th>
+          <th>Quantity</th>
+          <th>Status</th>
+          <th>Last Updated</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Chocolate Fudge Cake</td>
+          <td>Cakes</td>
+          <td>2,500</td>
+          <td>18</td>
+          <td>In Stock</td>
+          <td>10 May 2026</td>
+        </tr>
+        <tr>
+          <td>Blueberry Cupcake</td>
+          <td>Cupcakes</td>
+          <td>350</td>
+          <td>35</td>
+          <td>In Stock</td>
+          <td>10 May 2026</td>
+        </tr>
+        <tr>
+          <td>Butter Croissant</td>
+          <td>Pastries</td>
+          <td>280</td>
+          <td>50</td>
+          <td>In Stock</td>
+          <td>09 May 2026</td>
+        </tr>
+        <tr>
+          <td>Red Velvet Cake</td>
+          <td>Cakes</td>
+          <td>2,800</td>
+          <td>12</td>
+          <td>In Stock</td>
+          <td>09 May 2026</td>
+        </tr>
+        <tr>
+          <td>Vanilla Cupcake</td>
+          <td>Cupcakes</td>
+          <td>300</td>
+          <td>3</td>
+          <td>Low Stock</td>
+          <td>08 May 2026</td>
+        </tr>
+        <tr>
+          <td>Fresh Bread Loaf</td>
+          <td>Breads</td>
+          <td>180</td>
+          <td>0</td>
+          <td>Out of Stock</td>
+          <td>08 May 2026</td>
+        </tr>
+        <tr>
+          <td>Apple Pie Slice</td>
+          <td>Pastries</td>
+          <td>450</td>
+          <td>22</td>
+          <td>In Stock</td>
+          <td>07 May 2026</td>
+        </tr>
+        <tr>
+          <td>Chocolate Donut</td>
+          <td>Donuts</td>
+          <td>220</td>
+          <td>40</td>
+          <td>In Stock</td>
+          <td>07 May 2026</td>
+        </tr>
+        <tr>
+          <td>Cheesecake</td>
+          <td>Cakes</td>
+          <td>2,200</td>
+          <td>9</td>
+          <td>In Stock</td>
+          <td>06 May 2026</td>
+        </tr>
+        <tr>
+          <td>Cream Puff</td>
+          <td>Pastries</td>
+          <td>320</td>
+          <td>2</td>
+          <td>Low Stock</td>
+          <td>06 May 2026</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- QUICK LINKS -->
+<section class="dash-section">
+  <h2>Quick Navigation</h2>
+  <p>Jump to any section of the Bakery Bliss website directly from the dashboard.</p>
+
+  <div class="card-container">
+
+    <div class="card">
+      <img src="../sources/browsemenu.jpg" alt="Menu page">
+      <h3>Browse Menu</h3>
+      <p>Explore the full range of bakery products available for customers to order online.</p>
+      <a href="menu.html"><button>Go to Menu</button></a>
+    </div>
+
+    <div class="card">
+      <img src="../sources/contactus.jpg" alt="Contact page">
+      <h3>Contact Us</h3>
+      <p>Get in touch with the Bakery Bliss team for inquiries, feedback, or custom order requests.</p>
+      <a href="contact.html"><button>Contact</button></a>
+    </div>
+
+    <div class="card">
+      <img src="../sources/customersignup.jpg" alt="Signup page">
+      <h3>Customer Signup</h3>
+      <p>Register new customer accounts and manage user access to the Bakery Bliss platform.</p>
+      <a href="signup.html"><button>Signup</button></a>
+    </div>
+
+    <div class="card">
+      <img src="../sources/adminlogin.jpg" alt="Login page">
+      <h3>Admin Login</h3>
+      <p>Secure login portal for bakery administrators and staff to access the management system.</p>
+      <a href="login.html"><button>Login</button></a>
+    </div>
+
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
-
   <div class="footer-container">
 
     <div class="footer-box">
       <h3>Bakery Bliss</h3>
-      <p>
-        Freshly baked cakes, cupcakes, pastries & desserts made daily with love and premium ingredients.
-      </p>
+      <p>Freshly baked cakes, cupcakes, pastries and desserts made daily with love and premium ingredients.</p>
     </div>
 
     <div class="footer-box">
@@ -125,6 +368,8 @@
       <p><a href="services.html">Services</a></p>
       <p><a href="contact.html">Contact</a></p>
     </div>
+
+    
 
     <div class="footer-box">
       <h3>Contact</h3>
@@ -138,10 +383,11 @@
   <p class="footer-bottom">
     © 2026 Bakery Bliss. All Rights Reserved.
   </p>
-
 </footer>
 
-<script src="../jsFile/Jsfunction.js"></script>
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="../jsFile/jsFunctions.js"></script>
 
 </body>
 </html>

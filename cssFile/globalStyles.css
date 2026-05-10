@@ -339,3 +339,149 @@ button {
     color: white;
     cursor: pointer;
 }
+
+/* =========================================================
+   DASHBOARD STYLES
+========================================================= */
+
+/* Hero banner */
+.dash-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 50px 60px;
+  background: var(--brand-secondary-color);
+  flex-wrap: wrap;
+}
+
+.dash-hero h1 {
+  font-size: 42px;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.dash-hero p {
+  text-align: left;
+  color: var(--text-secondary-color);
+  max-width: 520px;
+  line-height: 1.7;
+  margin: 6px 0;
+}
+
+.dash-hero img {
+  width: 340px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  flex-shrink: 0;
+}
+
+.dash-hero-text {
+  flex: 1;
+  min-width: 260px;
+}
+
+/* Section wrapper */
+.dash-section {
+  padding: 40px 20px 20px;
+}
+
+.dash-section h2 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.dash-section > p {
+  color: var(--text-secondary-color);
+  max-width: 700px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+/* Stat number display */
+.dash-section .card h2 {
+  font-size: 36px;
+  color: var(--brand-accent-color);
+  margin-bottom: 4px;
+}
+
+.dash-section .card h3 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.dash-section .card p {
+  font-size: 13px;
+  color: var(--text-secondary-color);
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+
+/* Action card icons — same style as featured product images */
+#stock-actions .card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  display: block;
+  padding: 0;
+  background: none;
+  box-sizing: border-box;
+}
+
+/* Chart card */
+.dash-chart-card {
+  width: 100%;
+  max-width: 860px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.dash-chart-card canvas {
+  width: 100%;
+  max-height: 340px;
+}
+
+/* Table status colours */
+tr[data-status="Low Stock"] td {
+  background: #fff3e0;
+}
+
+tr[data-status="Out of Stock"] td {
+  background: #fdecea;
+  color: #c0392b;
+}
+
+tr[data-status="In Stock"] td:nth-child(5) {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dash-hero {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .dash-hero h1 {
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .dash-hero p {
+    text-align: center;
+  }
+
+  .dash-hero img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .dash-chart-card {
+    width: 90%;
+  }
+}
